@@ -1,0 +1,21 @@
+2024-08-02 22:40:14,396 - LogSetup - INFO - Initializing BrowserWrapper and WebDriver.
+2024-08-02 22:40:33,178 - root - INFO - Chrome browser opened.
+2024-08-02 22:40:35,437 - LogSetup - INFO - test login successfully starts.
+2024-08-02 22:40:35,438 - LogSetup - INFO - Starting login flow.
+2024-08-02 22:40:35,438 - LogSetup - INFO - Entering email: jameeltesting98@gmail.com
+2024-08-02 22:40:35,681 - LogSetup - INFO - Entering password.
+2024-08-02 22:40:36,014 - LogSetup - INFO - Quitting the WebDriver.
+2024-08-02 23:13:20,989 - LogSetup - INFO - Initializing BrowserWrapper and WebDriver.
+2024-08-02 23:13:31,830 - root - INFO - Chrome browser opened.
+2024-08-02 23:13:33,853 - LogSetup - INFO - test login successfully starts.
+2024-08-02 23:13:33,854 - LogSetup - INFO - Starting login flow.
+2024-08-02 23:13:33,854 - LogSetup - INFO - Entering email: jameeltesting98@gmail.com
+2024-08-02 23:13:34,150 - LogSetup - INFO - Entering password.
+2024-08-02 23:13:34,926 - LogSetup - INFO - Quitting the WebDriver.
+2024-08-02 23:17:04,879 - LogSetup - INFO - Initializing BrowserWrapper and WebDriver.
+2024-08-02 23:17:14,428 - root - INFO - Chrome browser opened.
+2024-08-02 23:17:16,427 - LogSetup - INFO - test login successfully starts.
+2024-08-02 23:17:16,427 - LogSetup - INFO - Starting login flow.
+2024-08-02 23:17:16,428 - LogSetup - INFO - Entering email: jameeltesting98@gmail.com
+2024-08-02 23:17:16,748 - LogSetup - INFO - Entering password.
+2024-08-02 23:17:37,589 - LogSetup - INFO - Quitting the WebDriver.
