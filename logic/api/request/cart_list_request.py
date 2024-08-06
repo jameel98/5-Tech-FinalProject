@@ -17,3 +17,8 @@ class APICartList:
         return self._request.post_request(self.api_url["add_to_cart"],
                                           self.api_cart["add_headers"],
                                           self.api_cart["add_cart_payload"])
+
+    def remove_item_from_cart(self):
+        return self._request.post_request(self.api_url["remove_from_cart"],
+                                          self.api_cart["remove_header"],
+                                          self.api_cart["remove_payload"])

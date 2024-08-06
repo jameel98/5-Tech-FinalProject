@@ -20,14 +20,19 @@ class TestCart(unittest.TestCase):
         self.auth.set_cookies()
         self.driver.get(self.config["base_url"])
         self.api_request = APIWrapper()
-        self.cart_list = APICartList(self.api_request)
+        self.cart_api = APICartList(self.api_request)
 
     def tearDown(self):
         self.driver.quit()
 
     def test_add_item_to_cart(self):
-        response = self.cart_list.add_item_to_cart()
+        # act
+        response = self.cart_api.add_item_to_cart()
         self.assertTrue(response.ok)
         self.assertEqual(response.status_code, 200)
         print(response.data)
 
+    def test_remove_item_from_cart(self):
+        self.cart_api.add_item_to_cart()
+        # act
+        response = self.cart_api.remove_item_from_cart()

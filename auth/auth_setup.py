@@ -26,10 +26,10 @@ class Auth:
         if login_response.status_code == 200:
             response_json = login_response.json()
             print("Response JSON:", response_json)
-            if response_json.get("status") == "success":
+            if response_json.get("message") == "נכנסת בהצלחה.":
                 print("Login via API successful.")
             else:
-                print("Login via API failed. Reason:", response_json.get("status"))
+                print("Login via API failed. Reason:", response_json.get("message"))
         else:
             print("Login via API failed. HTTP Status Code:", login_response.status_code)
 
