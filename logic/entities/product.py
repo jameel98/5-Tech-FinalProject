@@ -1,29 +1,20 @@
-from logic.api.response.fav_list_response import FavListData, FavList
-
-
 class Product:
-    def __init__(self, action: str, add: int, remove: int, switch: int):
-        self.action = action
-        self.data = FavListData(add=add, remove=remove, switch=switch)
+    def __init__(self, id, name):
+        self._id = id
+        self._name = name
 
-    @classmethod
-    def from_fav_list(cls, favlist: FavList) -> 'Product':
-        return cls(
-            action=favlist['action'],
-            add=favlist['data']['add'],
-            remove=favlist['data']['remove'],
-            switch=favlist['data']['switch']
-        )
+    @property
+    def id(self):
+        return self._id
 
-    def to_dict(self) -> FavList:
-        return {
-            'action': self.action,
-            'data': {
-                'add': self.data['add'],
-                'remove': self.data['remove'],
-                'switch': self.data['switch']
-            }
-        }
+    @id.setter
+    def id(self, value):
+        self._id = value
 
-    def __repr__(self):
-        return f"Product(action={self.action}, add={self.data['add']}, remove={self.data['remove']}, switch={self.data['switch']})"
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value

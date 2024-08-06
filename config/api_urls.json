@@ -1,5 +1,6 @@
 {
   "login": "https://www.foxhome.co.il/customer/ajax/post/",
-  "add_to_favorite" : "https://www.foxhome.co.il/mylist/wishlist?update=1&_=1722627737417",
-  "favorite_list": "https://www.foxhome.co.il/mylist/wishlist?init=1&_=1722768271480"
+  "favorite_list": "https://www.foxhome.co.il/mylist/wishlist?init=1&_=1722768271480",
+  "add_to_cart":"https://www.foxhome.co.il/checkout/cart/add/product/19798",
+  "remove_from_cart": "https://www.foxhome.co.il/checkout/sidebar/updateItemQty/"
 }

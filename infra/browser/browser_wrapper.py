@@ -1,4 +1,5 @@
 import logging
+import os
 
 from selenium import webdriver
 
@@ -9,9 +10,12 @@ class BrowserWrapper:
 
     def __init__(self):
         self._driver = None
-        self.config = ConfigProvider.load_from_file('../../config/config.json')
-        self.api_urls = ConfigProvider.load_from_file('../../config/api_urls.json')
-        self.user_login = ConfigProvider.load_from_file('../../config/user_login.json')
+
+        # Get the current working directory
+        current_working_directory = os.getcwd()
+        self.config = ConfigProvider.load_from_file(current_working_directory + '../../config/config.json')
+        self.api_urls = ConfigProvider.load_from_file(current_working_directory +'../../config/api_urls.json')
+        self.user_login = ConfigProvider.load_from_file(current_working_directory +'../../config/user_login.json')
         self.logger = logging.getLogger(__name__)
 
     def get_driver(self, url):

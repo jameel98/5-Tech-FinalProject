@@ -1,4 +1,5 @@
 import logging
+import os
 
 import requests
 
@@ -10,7 +11,8 @@ class APIWrapper:
 
     def __init__(self):
         self._request = None
-        self.config = ConfigProvider.load_from_file('../../config.json')
+        current_working_directory = os.getcwd()
+        self.config = ConfigProvider.load_from_file(current_working_directory + '../../config/config.json')
         self.logger = logging.getLogger(__name__)  # Initialize logger for this class
 
     def get_request(self, url, header=None, body=None):
