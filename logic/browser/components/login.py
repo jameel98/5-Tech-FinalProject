@@ -14,16 +14,12 @@ class Login(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-        log_setup = LogSetup()
-        self.logger = log_setup.logger
-
         wait = WebDriverWait(self._driver, 10)
         try:
             self.email_input = wait.until(EC.element_to_be_clickable((By.XPATH, self.EMAIL_INPUT_LOC)))
             self.password_input = wait.until(EC.element_to_be_clickable((By.XPATH, self.PASSWORD_INPUT_LOC)))
 
         except Exception as e:
-            self.logger.error(f"Error initializing Login page elements: {e}")
             raise
 
     def fill_email_input(self, email):
@@ -33,10 +29,8 @@ class Login(BasePage):
         :return:
         """
         try:
-            self.logger.info(f"Entering email: {email}")
             self.email_input.send_keys(email)
         except Exception as e:
-            self.logger.error(f"Error entering email: {e}")
             raise
 
     def fill_password_input(self, password):
@@ -46,10 +40,8 @@ class Login(BasePage):
         :return:
         """
         try:
-            self.logger.info(f"Entering password.")
             self.password_input.send_keys(password)
         except Exception as e:
-            self.logger.error(f"Error entering password: {e}")
             raise
 
     def click_enter(self):
@@ -65,10 +57,8 @@ class Login(BasePage):
         :return:
         """
         try:
-            self.logger.info("Starting login flow.")
             self.fill_email_input(email)
             self.fill_password_input(password)
             self.click_enter()
         except Exception as e:
-            self.logger.error(f"Error during login flow: {e}")
             raise

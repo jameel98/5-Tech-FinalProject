@@ -24,3 +24,6 @@ class APIWrapper:
         logging.info(f'send api post request.')
         result = requests.post(url, headers=header, json=body)
         return ResponseWrapper(ok=result.ok, status_code=result.status_code, data=result.json())
+
+    # def post_request(self, url, headers=None, params=None, body=None):
+    #     return requests.post(url, headers=headers, params=params, json=body)

@@ -11,6 +11,7 @@ from infra.browser.base_page import BasePage
 class NavBar(BasePage):
     LOGIN_BUTTON_LOC = '//div[@class="page_header_customer"]//a/span[text()="התחברות"]'
     WISH_LIST_LOC = "//div[@class='header_wishlist inline padding_l']//a"
+    CART_LIST_LOC = "//div[@class='page_header_minicart']//a"
     SEARCH_BUTTON_LOC = "//div[@class='page_header_search']"
     SEARCH_TEXT_INPUT_LOC = "//input[@id='header-search-input']"
 
@@ -28,6 +29,11 @@ class NavBar(BasePage):
     def navigate_to_fav_list(self):
         wait = WebDriverWait(self._driver, 10)
         wish_list_button = wait.until(EC.element_to_be_clickable((By.XPATH, self.WISH_LIST_LOC)))
+        wish_list_button.click()
+
+    def navigate_to_cart_list(self):
+        wait = WebDriverWait(self._driver, 10)
+        wish_list_button = wait.until(EC.element_to_be_clickable((By.XPATH, self.CART_LIST_LOC)))
         wish_list_button.click()
 
     def click_search_text_button(self):
@@ -53,7 +59,7 @@ class NavBar(BasePage):
         """Clicks on an outer category link."""
         try:
             wait = WebDriverWait(self._driver, 20)
-            category_btn = wait.until(EC.element_to_be_clickable((By.XPATH, f"//div[@class='page-wrapper']//span[text()='{category}']")))
+            category_btn = wait.until(EC.element_to_be_clickable((By.XPATH, f"//div[@class='page-wrapper']//span[text()='{category.value}']")))
             category_btn.click()
         except Exception as e:
             self.logger.error(f"Failed to click on outer category '{category}': {e}")

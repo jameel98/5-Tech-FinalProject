@@ -1,9 +1,9 @@
 class ResponseWrapper:
 
     def __init__(self, ok, status_code, data):
-        self._ok = ok
-        self._status_code = status_code
-        self._data = data
+        self.ok = ok
+        self.status_code = status_code
+        self.data = data
 
     @property
     def ok(self):

@@ -9,7 +9,7 @@ from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
 
 
-class TestFavorite(unittest.TestCase):
+class TestSearch(unittest.TestCase):
 
     def setUp(self) -> None:
         # Initialize driver
@@ -22,33 +22,15 @@ class TestFavorite(unittest.TestCase):
         self.auth.set_cookies()
         # open browser
         self.driver.get(self.config["base_url"])
-        #search item by category
         self.navbar = NavBar(self.driver)
-        self.navbar.click_on_category(Category.LAST_CHANCE.value)
-        self.search_result = SearchResult(self.driver)
 
     def tearDown(self):
         self.driver.quit()
 
-    def test_add_item_to_favorite_page(self):
+    def test_search_item_by_category(self):
         # act
-        self.search_result.get_item_fav_button_locator(1)
-        element_id = self.search_result.get_element_id(1)
+        self.navbar.click_on_category(Category.LAST_CHANCE.value)
+        self.search_result = SearchResult(self.driver)
 
-        # navigate to favlist page
-        self.navbar.navigate_to_fav_list()
-        self.fav_page = FavPage(self.driver)
-        element_id2 = self.fav_page.get_element_id(1)
-
-        self.assertEqual(element_id2, element_id)
-
-    def test_remove_item_from_favorite_page(self):
-        self.search_result.get_item_fav_button_locator(1)
-        # navigate to favlist page
-        self.navbar.navigate_to_fav_list()
-        self.fav_page = FavPage(self.driver)
-
-        # act
-        self.fav_page.click_remove_from_fav(1)
-        self.fav_page.refresh_page()
+        # assert
 

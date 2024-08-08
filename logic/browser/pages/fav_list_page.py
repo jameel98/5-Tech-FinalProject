@@ -6,14 +6,18 @@ from infra.browser.base_page import BasePage
 
 
 class FavPage(BasePage):
-    PRODUCT_NAME_LOC = "//li[1]//div[@class='product_content']/div[2]//a"
-
+    LIST_IS_EMPTY_LOCATOR = "//div[@class='message info empty']"
     def __init__(self, driver):
         super().__init__(driver)
 
-    def get_product_name(self):
+    @staticmethod
+    def get_item_name_locator(index):
+        """Generate the XPath locator for the item's fav button based on its index."""
+        return f"//li[{index}]//div[@class='product_content']/div[2]//a"
+
+    def get_product_name(self, index):
         wait = WebDriverWait(self._driver, 10)
-        product_name = wait.until(EC.element_to_be_clickable((By.XPATH, self.PRODUCT_NAME_LOC)))
+        product_name = wait.until(EC.element_to_be_clickable((By.XPATH, self.get_item_name_locator(index))))
         return product_name.text()
 
     @staticmethod
@@ -31,3 +35,8 @@ class FavPage(BasePage):
         fav_button = wait.until(EC.element_to_be_clickable((By.XPATH, self.get_item_fav_button_locator(index))))
         product_id = fav_button.get_attribute('product_id')
         return product_id
+
+    def get_list_is_empty_message(self):
+        wait = WebDriverWait(self._driver, 10)
+        empy_list = wait.until(EC.element_to_be_clickable((By.XPATH, self.get_item_fav_button_locator(index))))
+        empy_list.text()
