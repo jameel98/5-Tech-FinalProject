@@ -1,6 +1,6 @@
 import logging
 
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -55,11 +55,19 @@ class NavBar(BasePage):
             self.logger.error(f"Failed to get search text input: {e}")
             raise
 
+    def search_product_by_name(self, name):
+
+        self.click_search_text_button()
+        text_input = self.get_search_text_input()
+        text_input.send_keys(name)
+        text_input.send_keys(Keys.ENTER)
+
+
     def click_on_category(self, category):
         """Clicks on an outer category link."""
         try:
             wait = WebDriverWait(self._driver, 20)
-            category_btn = wait.until(EC.element_to_be_clickable((By.XPATH, f"//div[@class='page-wrapper']//span[text()='{category.value}']")))
+            category_btn = wait.until(EC.element_to_be_clickable((By.XPATH, f"//div[@class='page-wrapper']//span[text()='{category}']")))
             category_btn.click()
         except Exception as e:
             self.logger.error(f"Failed to click on outer category '{category}': {e}")

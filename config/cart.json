@@ -2,17 +2,21 @@
   "add_cart_payload": {
     "product_layout": "category",
     "product": "20681",
-    "form_key": "yL3EjCrcZqM6nehz",
+    "form_key": "",
     "super_attribute[268]": "674211",
     "super_attribute[93]": "670292"
   },
   "add_headers": {
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    "content-length": "63",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
     "accept": "application/json, text/javascript, */*; q=0.01",
-    "accept-encoding": "gzip, deflate, br, zstd",
-    "x-requested-with": "XMLHttpRequest",
-    "cookie": ""
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "origin": "https://www.foxhome.co.il",
+    "referer": "https://www.foxhome.co.il/last-chance",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "x-requested-with": "XMLHttpRequest"
   }
 }
