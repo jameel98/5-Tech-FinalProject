@@ -24,6 +24,11 @@ class SearchResult(BasePage):
         """Generate the XPath locator for the item's fav button based on its index."""
         return f'//li[{index}]//div[@class="product_wishlist"]/div/a'
 
+    @staticmethod
+    def get_item_cart_button_locator(index):
+        """Generate the XPath locator for the item's fav button based on its index."""
+        return f'//li[{index}]//button[@title="הוספה לסל"]'
+
     def click_add_to_fav(self, index):
         wait = WebDriverWait(self._driver, 10)
         fav_button = wait.until(EC.element_to_be_clickable((By.XPATH, self.get_item_fav_button_locator(index))))
@@ -44,3 +49,8 @@ class SearchResult(BasePage):
         wait = WebDriverWait(self._driver, 10)
         message = wait.until(EC.presence_of_element_located((By.XPATH, self.NO_RESULT_MESSAGE_LOCATOR)))
         return message.text
+
+    def click_add_to_cart(self, index):
+        wait = WebDriverWait(self._driver, 10)
+        fav_button = wait.until(EC.element_to_be_clickable((By.XPATH, self.get_item_cart_button_locator(index))))
+        fav_button.click()
