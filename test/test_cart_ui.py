@@ -7,7 +7,6 @@ from logic.browser.components.cart_popup import CartPopUp
 from logic.browser.components.login import Login
 from logic.browser.components.navbar import NavBar
 from logic.browser.pages.cart_page import CartPage
-from logic.browser.pages.fav_list_page import FavPage
 from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
 
