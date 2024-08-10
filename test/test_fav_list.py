@@ -22,7 +22,6 @@ class TestFavorite(unittest.TestCase):
         self.auth.login_via_api_save_cookies()
         self.auth.set_cookies()
         # open browser
-        self.driver.get(self.config["base_url"])
         #search item by category
         self.navbar = NavBar(self.driver)
         self.navbar.click_on_category(Category.LAST_CHANCE.value)
@@ -33,7 +32,7 @@ class TestFavorite(unittest.TestCase):
 
     def test_add_item_to_favorite_page(self):
         # act
-        self.search_result.get_item_fav_button_locator(1)
+        self.search_result.click_add_to_fav(1)
         element_id = self.search_result.get_element_id(1)
 
         # navigate to favlist page
@@ -44,7 +43,7 @@ class TestFavorite(unittest.TestCase):
         self.assertEqual(element_id2, element_id)
 
     def test_remove_item_from_favorite_page(self):
-        self.search_result.get_item_fav_button_locator(1)
+        self.search_result.click_add_to_fav(1)
         # navigate to favlist page
         self.navbar.navigate_to_fav_list()
         self.fav_page = FavPage(self.driver)

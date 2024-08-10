@@ -1,31 +1,38 @@
 {
-   "headers": {
-      "authority": "www.foxhome.co.il",
-      "method": "POST",
-      "path": "/customer/ajax/post/",
-      "scheme": "https",
-      "accept": "application/json, text/javascript, */*; q=0.01",
-      "accept-encoding": "gzip, deflate, br, zstd",
-      "accept-language": "en-US,en;q=0.9",
-      "cache-control": "no-cache",
-      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-      "origin": "https://www.foxhome.co.il",
-      "pragma": "no-cache",
-      "referer": "https://www.foxhome.co.il/",
-      "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
-      "sec-ch-ua-mobile": "?0",
-      "sec-ch-ua-platform": "\"Windows\"",
-      "sec-fetch-dest": "empty",
-      "sec-fetch-mode": "cors",
-      "sec-fetch-site": "same-origin",
-      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
-      "x-requested-with": "XMLHttpRequest"
-},
+  "headers": {
+    "authority": "www.foxhome.co.il",
+    "method": "POST",
+    "path": "/customer/ajax/post/",
+    "scheme": "https",
+    "accept": "application/json, text/javascript, */*; q=0.01",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "origin": "https://www.foxhome.co.il",
+    "pragma": "no-cache",
+    "referer": "https://www.foxhome.co.il/",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "x-requested-with": "XMLHttpRequest"
+  },
   "payload": {
     "form_key": "A0KkmeZybJglgD3v",
     "bot_validation": 1,
     "type": "login",
+    "email": "jameelmograbi@gmail.com",
+    "password": "jim@mog98"
+  },
+  "payload2": {
+    "form_key": "kNgJ0NhAIWJhpJ34",
+    "bot_validation": 1,
+    "type": "login",
     "email": "jameeltesting98@gmail.com",
-    "password": "jameel@test#98"
+    "password": "Jameel@test#98"
   }
 }

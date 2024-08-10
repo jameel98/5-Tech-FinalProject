@@ -1,3 +1,4 @@
+import logging
 import time
 import unittest
 
@@ -14,6 +15,16 @@ from logic.enums.category import Category
 class TestCart(unittest.TestCase):
 
     def setUp(self) -> None:
+        """
+        before each test apply those steps
+        initialize driver
+        open browser
+        login via ui
+        search for item
+        :return:
+        """
+        self.logger = logging.getLogger(__name__)  # Initialize logger for this class
+        self.logger.info('start cart test')
         # Initialize driver
         self.browser_wrapper = BrowserWrapper()
         self.config = self.browser_wrapper.config
@@ -34,12 +45,23 @@ class TestCart(unittest.TestCase):
         self.search_result = SearchResult(self.driver)
 
     def tearDown(self):
+        """
+        clear cart after test
+        :return:
+        """
+        self.logger.info('end cart test')
         self.cart_page.refresh_page()
         self.cart_page.remove_all_elements()
         time.sleep(5)
         self.driver.quit()
 
     def test_add_item_to_cart(self):
+        """
+        add item to cart
+        get its id
+        go to cart and validate its same
+        :return:
+        """
         # act
         self.search_result.click_add_to_cart(1)
         element_id = self.search_result.get_element_id(1)
@@ -55,6 +77,10 @@ class TestCart(unittest.TestCase):
         self.assertEqual(element_id2, element_id)
 
     def test_remove_item_from_cart(self):
+        """
+        add element to cart then remove it and validate cart is empty
+        :return:
+        """
         # arrange
         self.search_result.click_add_to_cart(1)
         # navigate to cart list page

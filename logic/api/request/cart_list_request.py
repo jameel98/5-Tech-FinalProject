@@ -1,3 +1,4 @@
+import logging
 import os
 
 from infra.api.api_wrapper import APIWrapper
@@ -7,6 +8,7 @@ from logic.api.cookies_manager import CookiesManager
 
 class APICartList:
     def __init__(self, request: APIWrapper):
+        self.logger = logging.getLogger(__name__)  # Initialize logger for this class
         self._request = request
         current_working_directory = os.getcwd()
         self.api_cart = ConfigProvider.load_from_file(current_working_directory + '../../config/cart.json')
@@ -14,6 +16,7 @@ class APICartList:
         self.cookies_manager = CookiesManager()
 
     def add_item_to_cart(self, url, header, data):
+        self.logger.info('send cart api request')
         return self._request.post_request(
             url, header=header, body=data
         )
