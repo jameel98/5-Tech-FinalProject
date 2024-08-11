@@ -2,5 +2,7 @@
   "base_url": "https://www.foxhome.co.il/",
   "browser": "Chrome",
   "email": "jameeltesting98@gmail.com",
-  "password": "Jameel@test#98"
+  "password": "Jameel@test#98",
+  "jira_api_token": "ATATT3xFfGF0N2GD-6gtB9oyUezZJ31OPCj86KtD2vwZEovdQ1ytOai26cF51MmaJPV9wW1RymWBZ8LSxpclRc3VTVDd8109ZPAAj-AeV92TqBP20IsfloxOAD1AjVqBr-6Qjagtb4-TiraulIo0rdXKFawnb-mJhqBKV_yXgzy02vARo6lhlwU=EFEBB394",
+  "jira_url" : "https://jameeltesting98.atlassian.net/jira/software/projects/SCRUM/boards/1"
 }
