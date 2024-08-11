@@ -5,6 +5,7 @@ from infra.utils import Utils
 from logic.browser.components.navbar import NavBar
 from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
+from logic.enums.messages import Messages
 from logic.enums.product_name import ProductName
 
 
@@ -23,7 +24,6 @@ class TestSearch(unittest.TestCase):
 
     def tearDown(self):
         self.logger.info("end test search")
-
         self.driver.quit()
 
     def test_search_item_by_category(self):
@@ -69,4 +69,4 @@ class TestSearch(unittest.TestCase):
         self.navbar.search_product_by_name(Utils.generate_random_text(5))
 
         self.search_result = SearchResult(self.driver)
-        self.assertEqual(self.search_result.get_search_message(), "אין תוצאות לשאילתת חיפוש שלך.")
+        self.assertEqual(self.search_result.get_search_message(), Messages.NO_SEARCH_RESULTS.value)

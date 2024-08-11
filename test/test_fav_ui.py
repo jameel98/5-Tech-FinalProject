@@ -8,6 +8,7 @@ from logic.browser.components.navbar import NavBar
 from logic.browser.pages.fav_list_page import FavPage
 from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
+from logic.enums.messages import Messages
 
 
 class TestFavorite(unittest.TestCase):
@@ -87,4 +88,4 @@ class TestFavorite(unittest.TestCase):
 
         self.fav_page.refresh_page()
 
-        self.assertEqual(self.fav_page.get_list_is_empty_message(), "ברשימת המועדפים הזו אין פריטים")
+        self.assertEqual(self.fav_page.get_list_is_empty_message(), Messages.EMPTY_FAV_LIST.value)
