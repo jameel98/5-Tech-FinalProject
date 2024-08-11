@@ -28,7 +28,7 @@ class Auth:
         """send login request and validate login successfully"""
         self.logger.info(f'start login proccess.')
         login_api_url = self.api_urls["login"]
-        login_payload = self.user_login["payload"]
+        login_payload = self.user_login["payload2"]
         login_headers = self.user_login["headers"]
         # Perform login via API
         login_response = self.session.post(url=login_api_url, headers=login_headers, data=login_payload)

@@ -5,6 +5,7 @@ from infra.utils import Utils
 from logic.browser.components.navbar import NavBar
 from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
+from logic.enums.product_name import ProductName
 
 
 class TestSearch(unittest.TestCase):
@@ -50,12 +51,12 @@ class TestSearch(unittest.TestCase):
         self.logger.info("start test search by name")
 
         # act
-        self.navbar.search_product_by_name(u"צלחת עיקרית PRESTIGE")
+        self.navbar.search_product_by_name(ProductName.DISH.value)
 
         self.search_result = SearchResult(self.driver)
         name = self.search_result.get_element_name()
 
-        self.assertEqual(name, u"צלחת עיקרית PRESTIGE")
+        self.assertEqual(name, ProductName.DISH.value)
 
     def test_search_name_doesnt_exist(self):
         """

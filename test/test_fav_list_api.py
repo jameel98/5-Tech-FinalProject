@@ -9,7 +9,7 @@ from logic.browser.pages.search_result import SearchResult
 from logic.enums.category import Category
 
 
-class TestFavorite(unittest.TestCase):
+class TestFavoriteApi(unittest.TestCase):
 
     def setUp(self) -> None:
         # Initialize driver
@@ -22,12 +22,20 @@ class TestFavorite(unittest.TestCase):
         self.auth.login_via_api_save_cookies()
         self.auth.set_cookies()
         # open browser
-        #search item by category
+        # search item by category
         self.navbar = NavBar(self.driver)
+        self.navbar.refresh_page()
         self.navbar.click_on_category(Category.LAST_CHANCE.value)
         self.search_result = SearchResult(self.driver)
 
     def tearDown(self):
+        """
+        after each test remove clear the favorite list
+        :return:
+        """
+        self.fav_page.remove_all_elements()
+        self.fav_page.refresh_page()
+        time.sleep(5)
         self.driver.quit()
 
     def test_add_item_to_favorite_page(self):
@@ -51,4 +59,3 @@ class TestFavorite(unittest.TestCase):
         # act
         self.fav_page.click_remove_from_fav(1)
         self.fav_page.refresh_page()
-

@@ -19,13 +19,11 @@ class SearchResult(BasePage):
         last_chance = wait.until(EC.presence_of_all_elements_located((By.XPATH, self.LAST_CHANCE_LOCATOR)))
         return last_chance[1].text
 
-    @staticmethod
-    def get_item_fav_button_locator(index):
+    def get_item_fav_button_locator(self, index):
         """Generate the XPath locator for the item's fav button based on its index."""
         return f'//li[{index}]//div[@class="product_wishlist"]/div/a'
 
-    @staticmethod
-    def get_item_cart_button_locator(index):
+    def get_item_cart_button_locator(self, index):
         """Generate the XPath locator for the item's fav button based on its index."""
         return f'//li[{index}]//button[@title="הוספה לסל"]'
 
