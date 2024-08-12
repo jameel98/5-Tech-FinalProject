@@ -2,16 +2,11 @@ import json
 import os
 import time
 import unittest
-from auth.auth_setup import Auth
 from infra.api.api_wrapper import APIWrapper
 from infra.browser.browser_wrapper import BrowserWrapper
-from infra.config_provider import ConfigProvider
-from logic.api.cookies_manager import CookiesManager
 from logic.api.request.cart_list_request import APICartList
-from logic.api.response.fav_list_response import FavListResponse
 from logic.browser.components.login import Login
 from logic.browser.components.navbar import NavBar
-from logic.enums.category import Category
 
 
 class TestCart(unittest.TestCase):

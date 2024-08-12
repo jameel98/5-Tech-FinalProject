@@ -16,7 +16,6 @@ class TestFavoriteApi(unittest.TestCase):
         self.browser_wrapper = BrowserWrapper()
         self.config = self.browser_wrapper.config
         self.driver = self.browser_wrapper.get_driver(self.config["base_url"])
-        self.driver.get_cookie("form_key")
         # start auth
         self.auth = Auth(driver=self.driver)
         self.auth.login_via_api_save_cookies()
