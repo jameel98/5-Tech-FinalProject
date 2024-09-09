@@ -21,13 +21,6 @@
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
     "x-requested-with": "XMLHttpRequest"
   },
-  "payload": {
-    "form_key": "A0KkmeZybJglgD3v",
-    "bot_validation": 1,
-    "type": "login",
-    "email": "jameelmograbi@gmail.com",
-    "password": "jim@mog98"
-  },
   "payload2": {
     "form_key": "kNgJ0NhAIWJhpJ34",
     "bot_validation": 1,

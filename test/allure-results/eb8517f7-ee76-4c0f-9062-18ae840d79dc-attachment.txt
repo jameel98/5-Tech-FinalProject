@@ -1,0 +1,5 @@
+Response Status Code: 200
+Response Content: b'{"errors":false,"message":"\\u05e0\\u05db\\u05e0\\u05e1\\u05ea \\u05d1\\u05d4\\u05e6\\u05dc\\u05d7\\u05d4.","elements":{"#widget-membership":{"trigger":"init"}},"customer":{"group_id":1,"firstname":"jameel","lastname":"mograbi","fullname":"jameel mograbi","email":"jameeltesting98@gmail.com","telephone":"","customer_id":"274456","customer_note":"","newsletter":true,"membership_exists":false,"websiteId":1,"messages":[],"data_id":1723449579,"hashed_email":"12666788ee496b17d7d034937e6665bef9f8e8a689c1759ae1206b28688bcd02"}}'
+Response JSON: {'errors': False, 'message': 'נכנסת בהצלחה.', 'elements': {'#widget-membership': {'trigger': 'init'}}, 'customer': {'group_id': 1, 'firstname': 'jameel', 'lastname': 'mograbi', 'fullname': 'jameel mograbi', 'email': 'jameeltesting98@gmail.com', 'telephone': '', 'customer_id': '274456', 'customer_note': '', 'newsletter': True, 'membership_exists': False, 'websiteId': 1, 'messages': [], 'data_id': 1723449579, 'hashed_email': '12666788ee496b17d7d034937e6665bef9f8e8a689c1759ae1206b28688bcd02'}}
+Login via API successful.
+Cookies set in the browser.

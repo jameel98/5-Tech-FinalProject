@@ -15,7 +15,10 @@ class APICartList:
         self.api_url = ConfigProvider.load_from_file(current_working_directory + '../../config/api_urls.json')
         self.cookies_manager = CookiesManager()
 
-    def add_item_to_cart(self):
+    def add_item_to_cart(self, url, header, data):
+        return self._request.post_request(url, header, data)
+
+    def add_item_cart(self):
         form_key = self.cookies_manager.get_form_key()
         print(form_key)
         cart_cookies = self.cookies_manager.get_cart_cookies()
@@ -31,4 +34,3 @@ class APICartList:
             self.api_cart["add_headers"],
             self.api_cart["add_cart_payload"]
         )
-

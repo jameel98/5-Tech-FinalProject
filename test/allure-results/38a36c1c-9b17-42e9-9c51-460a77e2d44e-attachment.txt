@@ -1,0 +1,1 @@
+Cart list is already empty. No elements to remove.

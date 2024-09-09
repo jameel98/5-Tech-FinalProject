@@ -50,6 +50,7 @@ class TestCart(unittest.TestCase):
             "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
             "origin": "https://www.foxhome.co.il",
             "referer": "https://www.foxhome.co.il/last-chance",
+            "cookie": "",
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
